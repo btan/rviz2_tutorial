@@ -25,3 +25,22 @@ ros2 run rviz2 rviz2
 ```
 Set the Fixed Frame field to "/my_frame", and add a Markers display
 [RVIZ screenshot](https://github.com/btan/rviz2_tutorial/tree/main/using_markers/img/rviz2_usingmarkers.png?raw=true)
+
+
+## Markers: Points and Lines
+## Build a package
+```sh
+colcon build --packages-select using_markers
+```
+## Source the setup file and run the package
+```sh
+source install/setup.bash
+ros2 run using_markers points_and_lines
+```
+
+## View Marker
+Launch another terminal
+```sh
+ros2 run rviz2 rviz2
+```
+Set the Fixed Frame field to "/my_frame", and add a Markers display
