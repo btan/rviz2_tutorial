@@ -24,6 +24,19 @@ target_compile_features(basic_shapes PUBLIC c_std_99 cxx_std_17)  # Require C99 
 install(TARGETS basic_shapes
   DESTINATION lib/${PROJECT_NAME})
 
+# point_and_lines start
+add_executable(points_and_lines src/points_and_lines.cpp)
+ament_target_dependencies(points_and_lines rclcpp visualization_msgs)
+
+target_include_directories(points_and_lines PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(points_and_lines PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+install(TARGETS points_and_lines
+  DESTINATION lib/${PROJECT_NAME})
+# point_and_lines end
+
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
   # the following line skips the linter which checks for copyrights
