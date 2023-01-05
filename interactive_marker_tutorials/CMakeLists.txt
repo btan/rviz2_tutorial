@@ -28,6 +28,31 @@ target_compile_features(basic_controls PUBLIC c_std_99 cxx_std_17)  # Require C9
 
 install(TARGETS basic_controls
   DESTINATION lib/${PROJECT_NAME})
+# pong game
+add_executable(pong src/pong.cpp)
+ament_target_dependencies(pong rclcpp interactive_markers tf2_geometry_msgs geometry_msgs tf2 tf2_ros)
+
+target_include_directories(pong PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(pong PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+install(TARGETS pong
+  DESTINATION lib/${PROJECT_NAME})
+# end pong game
+
+# pongPaddle
+add_executable(pongpaddle src/pongpaddle.cpp)
+ament_target_dependencies(pongpaddle rclcpp interactive_markers tf2_geometry_msgs geometry_msgs tf2 tf2_ros)
+
+target_include_directories(pongpaddle PUBLIC
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+  $<INSTALL_INTERFACE:include>)
+target_compile_features(pongpaddle PUBLIC c_std_99 cxx_std_17)  # Require C99 and C++17
+
+install(TARGETS pongpaddle
+  DESTINATION lib/${PROJECT_NAME})
+# end pongPaddle
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
