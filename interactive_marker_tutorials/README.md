@@ -25,3 +25,16 @@ ros2 run rviz2 rviz2
 ```
 Set the Fixed Frame field to "/base_linke", and add Interactive Markers display
 [RVIZ screenshot](https://github.com/btan/rviz2_tutorial/tree/main/interactive_marker_tutorials/img/basicControl.png?raw=true)
+
+## Pong Game
+## Source the setup file and run the package
+```sh
+. install/setup.bash
+ros2 run interactive_marker_tutorials pong
+```
+## Pong Paddle Testing
+## Source the setup file and run the package
+```sh
+. install/setup.bash
+ros2 run interactive_marker_tutorials pongpaddle
+```
